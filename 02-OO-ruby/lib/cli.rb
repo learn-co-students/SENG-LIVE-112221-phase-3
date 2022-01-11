@@ -46,8 +46,8 @@ def add_patient
         puts 'What is your name?'
         owner = gets.strip
         puts 'What is your number?'
-        number = gets.strip
-
+        phone = gets.strip
+        binding.pry
       #TODO: Add a patient 
       # hash like, with keys and attributes  
       # easy to replicate 
