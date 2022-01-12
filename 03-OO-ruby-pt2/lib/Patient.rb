@@ -2,7 +2,7 @@ class Patient
     attr_accessor :name, :age, :owner, :number
     attr_reader :species
     @@all = []
-    def initialize(name, species="cat", age, owner,number)
+    def initialize(name, species, age, owner,number)
         @species = species
         @name = name
         @age = age
@@ -10,7 +10,6 @@ class Patient
         @number = number
         @@all << self
     end 
-#READ
 #Lets us call Patient.all, a class method
     def self.all
         @@all
@@ -26,8 +25,29 @@ class Patient
         puts "--------------------------------"
     end 
 
-   
+    def self.all_species
+        @@all.map{|p| p.species}.uniq
+    end
 
-   
+    def self.find_patient(name, owner)
+        @@all.find{|p| p.name == name && p.owner == owner}
+    end 
+
+    def update_phone(new_number)
+        self.number = new_number
+    end 
+    
+    def delete 
+        binding.pry
+        @@all = @@all.filter{|p| p != self}
+        puts "#{self.name} was removed form the system"
+    end 
+    
+
+
+end 
+
+
+class Cat < Patient
 
 end 

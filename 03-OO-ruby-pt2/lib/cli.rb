@@ -113,6 +113,6 @@ def seed
         {species:"bird", age:1, name:"Leo", owner:"Ruby Ramos", phone: 9999999999},
         {species:"dog", age:1, name:"Teddy", owner:"Ruby Ingram", phone: 9999999999},
     ]
-    patients.each{|p| Patient.new( p[:name], p[:species], p[:age], p[:owner], p[:phone])}
+    patients.each{|p| Patient.new(p[:name], p[:species], p[:age], p[:owner], p[:phone])}
 
 end 
