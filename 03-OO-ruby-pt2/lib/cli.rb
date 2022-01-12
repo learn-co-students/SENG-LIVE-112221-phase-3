@@ -1,5 +1,6 @@
 def initialize_app 
     seed
+    binding.pry
     menu
 end 
 
@@ -27,7 +28,7 @@ end
 
 #Lists all Patient info
 def list_patient_info 
-    Patient.all.each{|p|  p.print_info}
+    Patient.all.each{|p| p.print_info}
     return_to_menu
 end 
 
@@ -49,7 +50,7 @@ def add_patient
             name: name,
             age: age,
             owner:owner,
-            number:number
+            number:number.to_i
         }
 
         puts "#{patient_hash} is this correct? Y or N"
@@ -112,6 +113,6 @@ def seed
         {species:"bird", age:1, name:"Leo", owner:"Ruby Ramos", phone: 9999999999},
         {species:"dog", age:1, name:"Teddy", owner:"Ruby Ingram", phone: 9999999999},
     ]
-    patients.each{|p| Patient.new(p[:species], p[:name], p[:owner], p[:number])}
+    patients.each{|p| Patient.new( p[:name], p[:species], p[:age], p[:owner], p[:phone])}
 
 end 
