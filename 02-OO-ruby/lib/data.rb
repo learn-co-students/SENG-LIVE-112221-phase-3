@@ -31,3 +31,5 @@ patients = [
     {patient_id:29, species:"dog", age:1, name:"Teddy", owner:"Ruby Ingram", phone: 9999999999},
 ]
 
+patients.each {|p|Patient.new(p[:species], p[:name], p[:age], p[:owner], p[:phone]) }
+

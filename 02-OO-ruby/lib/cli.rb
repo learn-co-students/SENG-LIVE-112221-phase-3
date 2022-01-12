@@ -4,6 +4,7 @@ end
 
 #runs main menu
 def menu 
+    system("clear")
     puts "Welcome to Flatiron Clinic for cute snoots"
     puts "Please choose an option:"
     puts "1. List all Patients"
@@ -31,6 +32,7 @@ end
 #Lists all Patient info
 def list_patient_info 
     #TODO use class vairable and instance method to print all patients
+    puts Patient.all
     puts 'press any key to return to menu'
     user_input = gets.strip
 end 
@@ -48,6 +50,8 @@ def add_patient
         puts 'What is your number?'
         phone = gets.strip
         binding.pry
+        
+        Patient.new(species, name, age, owner, phone)
       #TODO: Add a patient 
       # hash like, with keys and attributes  
       # easy to replicate 
