@@ -12,6 +12,7 @@ class PatientORM
     end
 
     def save
+        binding.pry
         sql = <<-SQL
         INSERT INTO patients (species, name, age, owner, number) VALUES (?,?,?,?,?);        
         SQL
@@ -23,6 +24,7 @@ class PatientORM
 
     def self.create(args)
         patient = PatientORM.new(args)
+        binding.pry
         patient.save
         patient
       end
