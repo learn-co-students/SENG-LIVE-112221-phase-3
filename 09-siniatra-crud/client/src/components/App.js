@@ -9,24 +9,19 @@ function App() {
 
   useEffect(()=> {
   //Gets patients and clinics
-    fetch('http://localhost:9292/patients')
-    .then(res => res.json())
+    //TODO write a fetch to 'patients'
     .then(setPatients)
     
-    fetch('http://localhost:9292/clinics')
-    .then(res => res.json())
+    //TODO write a fetch to 'clinics'
     .then(setClinics)
   },[])
 
   //Creates a Patient 
   const postPatient = (patient) => {
-    fetch('http://localhost:9292/patients',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json'
-      },
-      body: JSON.stringify(patient)
-    })
+    fetch(
+      //TODO: Write a post
+
+    )
     .then(res => res.json())
     .then(newPatient => {
       setPatients([newPatient,...patients])
@@ -34,13 +29,9 @@ function App() {
   }
 //patches patient
   const patchPet = (patient) => {
-    fetch(`http://localhost:9292/patients/${patient.id}`,{
-      method:'PATCH',
-      headers:{
-        'Content-Type':'application/json'
-      },
-      body: JSON.stringify({...patient, active:false})
-    })
+    fetch(
+      //TODO: Write a patch
+    )
     .then(res => res.json())
     .then(data => {
       console.log(data)
@@ -55,10 +46,9 @@ function App() {
   } 
 //Deletes patient
   const handleDelete = (id) => {
-    fetch(`http://localhost:9292/patients/${id}`,{
-      method:'DELETE',
-      headers:{'Content-Type':'application/json'}
-    })
+    fetch(
+      //TODO:Write a delete
+    )
     .then(res => res.json())
     .then(data => {
       setPatients(patients.filter(p => p.id !== id))
