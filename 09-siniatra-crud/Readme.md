@@ -1,3 +1,3 @@
 # Sinatra CRUD
 
-Sinatra is cool
+Sinatra is very cool
